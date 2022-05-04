@@ -6,11 +6,27 @@
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 17:54:39 by ldurante          #+#    #+#             */
-/*   Updated: 2022/05/04 18:19:05 by ldurante         ###   ########.fr       */
+/*   Updated: 2022/05/04 22:26:09 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Whatever.hpp"
+
+class Awesome
+{
+	public:
+		Awesome(): _n(0) {}
+		Awesome(int n) : _n(n) {}
+		bool operator==( Awesome const & rhs ) const { return (this->_n == rhs._n); }
+		bool operator!=( Awesome const & rhs ) const{ return (this->_n != rhs._n); }
+		bool operator>( Awesome const & rhs ) const { return (this->_n > rhs._n); }
+		bool operator<( Awesome const & rhs ) const { return (this->_n < rhs._n); }
+		bool operator>=( Awesome const & rhs ) const { return (this->_n >= rhs._n); }
+		bool operator<=( Awesome const & rhs ) const { return (this->_n <= rhs._n); }
+		int get() const { return this->_n; }
+	private:
+		int _n;
+};
 
 int main( void ) 
 {
@@ -32,5 +48,12 @@ int main( void )
 	float f = 5.4;
 	std::cout << "min( e, f ) = " << ::min( e, f ) << std::endl;
 	std::cout << "max( e, f ) = " << ::max( e, f ) << std::endl;
+
+	Awesome g(6);
+	Awesome h(10);
+	::swap(g, h);
+	std::cout << "g = " << g.get() << ", h = " << h.get() << std::endl;
+	std::cout << "min( g, h ) = " << ::min(g, h).get() << std::endl;
+	std::cout << "max( g, h ) = " << ::max(g, h).get() << std::endl;
 	return 0;
 }
