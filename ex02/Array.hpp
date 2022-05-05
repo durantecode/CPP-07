@@ -6,7 +6,7 @@
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 20:37:44 by ldurante          #+#    #+#             */
-/*   Updated: 2022/05/04 22:05:08 by ldurante         ###   ########.fr       */
+/*   Updated: 2022/05/05 14:03:11 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ const char *Array<T>::IndexOutOfBounds::what() const throw()
 template <typename T>
 Array<T>::~Array(void)
 {
-
+	delete [] this->m_array;
 }
 
 #endif
