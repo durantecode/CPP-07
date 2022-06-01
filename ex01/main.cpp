@@ -6,7 +6,7 @@
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 18:23:57 by ldurante          #+#    #+#             */
-/*   Updated: 2022/05/04 22:30:06 by ldurante         ###   ########.fr       */
+/*   Updated: 2022/06/01 20:47:20 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,6 @@ int main(void)
 	Awesome tab2[5];
 	iter(tab, 5, printValues);
 	iter(tab2, 5, printValues);
+
 	return (0);
 }

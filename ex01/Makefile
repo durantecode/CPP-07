@@ -6,14 +6,14 @@
 #    By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/04 18:22:20 by ldurante          #+#    #+#              #
-#    Updated: 2022/05/04 18:22:27 by ldurante         ###   ########.fr        #
+#    Updated: 2022/06/01 20:40:20 by ldurante         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = iter
 CXX = clang++
 RM = rm -f
-CXXFLAGS = -Wall -Werror -Wextra -std=c++98 
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -pedantic
 
 # COLORS #
 
