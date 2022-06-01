@@ -6,7 +6,7 @@
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 20:37:44 by ldurante          #+#    #+#             */
-/*   Updated: 2022/05/05 14:03:11 by ldurante         ###   ########.fr       */
+/*   Updated: 2022/06/01 22:22:10 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ class Array
 };
 
 template <typename T>
-Array<T>::Array(void) : m_array(NULL), m_size(0)
+Array<T>::Array(void) : m_array(new T[0]), m_size(0)
 {
 
 }
@@ -64,11 +64,15 @@ Array<T>::Array(Array const &toCopy)
 template <typename T>
 Array<T> &Array<T>::operator = (Array const &toCopy)
 {
-	delete [] this->m_array;
-	this->m_size = toCopy.size();
-	this->m_array = new T[this->m_size];
-	for (int i = 0; i < this->m_size; i++)
-		this->m_array[i] = toCopy[i];
+	if (this->m_array != NULL)
+		delete [] this->m_array;
+	if (toCopy.size() != 0)
+	{
+		this->m_size = toCopy.size();
+		this->m_array = new T[this->m_size];
+		for (int i = 0; i < this->m_size; i++)
+			this->m_array[i] = toCopy[i];
+	}
 	return *this;
 }
 
@@ -95,7 +99,8 @@ const char *Array<T>::IndexOutOfBounds::what() const throw()
 template <typename T>
 Array<T>::~Array(void)
 {
-	delete [] this->m_array;
+	if (this->m_array != NULL)
+		delete [] this->m_array;
 }
 
 #endif
