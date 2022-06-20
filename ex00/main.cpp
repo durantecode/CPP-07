@@ -6,7 +6,7 @@
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 17:54:39 by ldurante          #+#    #+#             */
-/*   Updated: 2022/06/01 20:43:01 by ldurante         ###   ########.fr       */
+/*   Updated: 2022/06/20 19:40:14 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,9 @@ int main( void )
 
 	Awesome g(6);
 	Awesome h(10);
+	std::cout << (g < h) << std::endl;
 	::swap(g, h);
+	std::cout << (g < h) << std::endl;
 	std::cout << "g = " << g.get() << ", h = " << h.get() << std::endl;
 	std::cout << "min( g, h ) = " << ::min(g, h).get() << std::endl;
 	std::cout << "max( g, h ) = " << ::max(g, h).get() << std::endl;

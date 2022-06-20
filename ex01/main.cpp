@@ -6,7 +6,7 @@
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 18:23:57 by ldurante          #+#    #+#             */
-/*   Updated: 2022/06/01 20:47:20 by ldurante         ###   ########.fr       */
+/*   Updated: 2022/06/20 19:46:43 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ class Awesome
 		Awesome( void ) : _n( 42 ) { return; }
 		int get( void ) const { return this->_n; }
 	private:
-	int _n;
+		int _n;
 };
 std::ostream & operator<<( std::ostream & o, Awesome const & rhs ) { o << rhs.get(); return o; }
 
